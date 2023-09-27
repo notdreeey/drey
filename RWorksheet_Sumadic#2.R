@@ -54,12 +54,12 @@ data <- c(length(rivers), sum(rivers), mean(rivers), median(rivers), var(rivers)
 data
 
 #8. a.
-     Forbes_Ranking <- data.frame(
-     Power_Ranking = (1:25),
-     Celebrity_name = c("Tom Cruise", "Rolling Stones", "Oprah Winfrey", "U2", "Tiger Woods", "Steven Spielberg", "Howard Stern", "50 Cent", "Cast of the Sopranos", "Dan Brown", "Bruce Springsteen", "Donald Trump", "Muhammad Ali", "Paul McCartney", "George Lucas", "Elton John", "David Letterman", "Phil Mickelson", "J.K Rowling", "Bradd Pitt", "Peter Jackson", "Dr. Phil McGraw", "Jay Lenon", "Celine Dion", "Kobe Bryant"),
-     Pay = c(67, 90, 225, 110, 90, 332, 302, 41, 52, 88, 55, 44, 55, 40, 233, 34, 40, 47, 75, 25, 39, 45, 32, 40, 31)
- )
-#     Power_Ranking       Celebrity_name Pay
+power_ranking <- c(1:25)
+Celebrity_name <- c("Tom Cruise", "Rolling Stones", "Oprah Winfrey", "U2", "Tiger Woods", "Steven Spielberg", "Howard Stern", "50 Cent", "Cast of the Sopranos", "Dan Brown", "Bruce Springsteen", "Donald Trump", "Muhammad Ali", "Paul McCartney", "George Lucas", "Elton John", "David Letterman", "Phil Mickelson", "J.K Rowling", "Bradd Pitt", "Peter Jackson", "Dr. Phil McGraw", "Jay Lenon", "Celine Dion", "Kobe Bryant")
+Pay = c(67, 90, 225, 110, 90, 332, 302, 41, 52, 88, 55, 44, 55, 40, 233, 34, 40, 47, 90, 25, 39, 45, 32, 40, 31)
+Forbes_Ranking <- data.frame(Power_Ranking = power_ranking, Celebrity_Name = Celebrity_name, pay = Pay)
+Forbes_Ranking
+#            Power_Ranking       Celebrity_name Pay
 #     1              1           Tom Cruise  67
 #     2              2       Rolling Stones  90
 #     3              3        Oprah Winfrey 225
@@ -86,6 +86,10 @@ data
 #     25            25          Kobe Bryant  31
 
 # b.
+     power_ranking [(19)] <- ("15")
+      Pay [(19)] <- ("90")
+      Forbes_Ranking <- data.frame(Power_Ranking = power_ranking, Celebrity_Name = Celebrity_name, pay = Pay)
+      Forbes_Ranking
 # c. 
 # d.
 # e.
