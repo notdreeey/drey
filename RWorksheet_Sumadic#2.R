@@ -8,7 +8,9 @@ x <- 1:7
 vector_a <- seq(1, 3, by = 0.2)
 
 #3 a. 22
+ages [3]
 #  b.28, 36
+ages[c(2, 4)]
 #  c.34 28 22 27 18 52 39 42 29 35 27 37 34 19 20 57 49 50 37 46 25 17 37 43 53 41 51 35 24 33 41 53 40 18 44 38 41 48 27 39 19 30 61 54 58 26 18 
 ages <- c(34, 28, 22, 36, 27, 18, 52, 39, 42, 29, 35, 31, 27, 22, 37, 34, 19, 20, 57, 49, 50, 37, 46, 25, 17, 37, 43, 53, 41, 51, 35, 24, 33, 41, 53, 40, 18, 44, 38, 41, 48, 27, 39, 19, 30, 61, 54, 58, 26, 18)   
 
@@ -52,6 +54,37 @@ data <- c(length(rivers), sum(rivers), mean(rivers), median(rivers), var(rivers)
 data
 
 #8. a.
+     Forbes_Ranking <- data.frame(
+     Power_Ranking = (1:25),
+     Celebrity_name = c("Tom Cruise", "Rolling Stones", "Oprah Winfrey", "U2", "Tiger Woods", "Steven Spielberg", "Howard Stern", "50 Cent", "Cast of the Sopranos", "Dan Brown", "Bruce Springsteen", "Donald Trump", "Muhammad Ali", "Paul McCartney", "George Lucas", "Elton John", "David Letterman", "Phil Mickelson", "J.K Rowling", "Bradd Pitt", "Peter Jackson", "Dr. Phil McGraw", "Jay Lenon", "Celine Dion", "Kobe Bryant"),
+     Pay = c(67, 90, 225, 110, 90, 332, 302, 41, 52, 88, 55, 44, 55, 40, 233, 34, 40, 47, 75, 25, 39, 45, 32, 40, 31)
+ )
+#     Power_Ranking       Celebrity_name Pay
+#     1              1           Tom Cruise  67
+#     2              2       Rolling Stones  90
+#     3              3        Oprah Winfrey 225
+ #    5              5          Tiger Woods  90
+#     6              6     Steven Spielberg 332
+#     7              7         Howard Stern 302
+#     8              8              50 Cent  41
+#     9              9 Cast of the Sopranos  52
+#     10            10            Dan Brown  88
+#     11            11    Bruce Springsteen  55
+#     12            12         Donald Trump  44
+#     13            13         Muhammad Ali  55
+#     14            14       Paul McCartney  40
+#     15            15         George Lucas 233
+#     16            16           Elton John  34
+#     17            17      David Letterman  40
+#     18            18       Phil Mickelson  47
+#     19            19          J.K Rowling  75
+#     20            20           Bradd Pitt  25
+ #    21            21        Peter Jackson  39
+#     22            22      Dr. Phil McGraw  45
+#     23            23            Jay Lenon  32
+#     24            24          Celine Dion  40
+#     25            25          Kobe Bryant  31
+
 # b.
 # c. 
 # d.
