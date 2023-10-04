@@ -1,0 +1,73 @@
+---
+title: "Worksheet3 RMarkdown"
+author: "Andrey Sumadic"
+date: "2023-10-04"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+1.
+#a. 
+LETTERS[1:11]
+```
+
+```{r}
+#b.
+LETTERS[c(1,3,5,7,9,11,13,15,17,19,21)]
+```
+
+```{r}
+#c.
+LETTERS[c(1,5,9,15,21)]
+```
+
+```{r}
+#d.
+letters[26:22]
+```
+
+```{r}
+#e. 
+letters[c(15:24)]
+```
+
+```{r}
+2.
+#a.
+city <- c("Tuguegarao City", "Manila", "Iloilo City", "Tacloban","Samal Island", "Davao City")
+```
+
+```{r}
+#b.
+temp <- c(42, 39, 34, 34, 30, 27)
+```
+
+```{r}
+#c.
+dataframe <- data.frame(city, temp)
+```
+
+```{r}
+#d.
+names(dataframe) <- c("City", "Temperature")
+
+```
+
+```{r}
+#e. The structure shows it is a dataframe with 6 observations (rows) of 2 variables (columns)
+```
+
+```{r}
+#f. 
+dataframe[c(3,4),]
+```
+
+```{r}
+#g. 
+dataframe[dataframe$Temperature == max(dataframe$Temperature), "City"]
+dataframe[dataframe$Temperature == min(dataframe$Temperature), "City"]
+```
