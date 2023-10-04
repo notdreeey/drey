@@ -27,7 +27,7 @@ LETTERS[c(1,5,9,15,21)]
 
 ```{r}
 #d.
-letters[26:22]
+letters[22:26]
 ```
 
 ```{r}
@@ -48,26 +48,29 @@ temp <- c(42, 39, 34, 34, 30, 27)
 
 ```{r}
 #c.
-dataframe <- data.frame(city, temp)
+combined <- data.frame(city, temp)
+combined
 ```
 
 ```{r}
 #d.
-names(dataframe) <- c("City", "Temperature")
+names(combined)[names(combined) == "city"] <- "City"
+names(combined)[names(combined) == "temp"] <- "Temperature"
+combined
 
 ```
 
 ```{r}
 #e. The structure shows it is a dataframe with 6 observations (rows) of 2 variables (columns)
+str(combined)
 ```
 
 ```{r}
 #f. 
-dataframe[c(3,4),]
+combined[c(3,4),]
 ```
 
 ```{r}
 #g. 
-dataframe[dataframe$Temperature == max(dataframe$Temperature), "City"]
-dataframe[dataframe$Temperature == min(dataframe$Temperature), "City"]
+combined[c(1,6),]
 ```
