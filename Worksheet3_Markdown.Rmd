@@ -74,3 +74,52 @@ combined[c(3,4),]
 #g. 
 combined[c(1,6),]
 ```
+
+```{r}
+2.
+#a.
+matrix1 <- matrix(c(1:8, 11:14), nrow = 3, ncol = 4)
+matrix1
+
+matrix2 <- matrix1 * 2
+matrix2
+
+row_2 <- matrix1[2, ]
+row_2
+
+subset_matrix <- matrix1[1:2, 3:4]
+subset_matrix
+
+row_3_subset <- matrix1[3, 2:3]
+row_3_subset
+
+column_4 <- matrix1[, 4]
+column_4
+
+rownames(matrix1) <- c("isa", "dalawa", "tatlo")
+colnames(matrix1) <- c("uno", "dos", "tres", "quatro")
+matrix1
+
+reshaped_matrix <- matrix1
+dim(reshaped_matrix) <- c(6, 2)
+reshaped_matrix
+
+```
+
+```{r}
+3.
+#a.
+values <- c(1, 2, 3, 6, 7, 8, 9, 0, 3, 4, 5, 1, 1, 2, 3, 6, 7, 8, 9, 0, 3, 4, 5, 1)
+
+array1 <- array(values, dim = c(2, 4, 3))
+array1
+
+#b. The array has three dimensions: rows, columns, and the third dimension created in part (a).
+
+row_names <- letters[1:2]
+col_names <- LETTERS[1:4]
+dimnames(array1) <- list(row_names, col_names, c("1st-Dimensional Array", "2nd-Dimensional Array", "3rd-Dimensional Array"))
+array1
+
+```
+
