@@ -1,0 +1,60 @@
+---
+title: "RWorksheet 4b"
+author: "Andrey Sumadic"
+date: "2023-11-08"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+#1.
+vectorB <- c(1,2,3,4,5)
+
+matrixB <- matrix(0, nrow = 5, ncol = 5) 
+print(matrixB)
+for(i in 1:5){
+  for(j in 1:5){
+    matrixB[i,j] <- abs(vectorB[i] - vectorB[j])
+  }
+}
+print(matrixB)
+
+
+```
+
+```{r}
+#2.
+for(i in 1:5) {
+  for(j in 1:i) {
+    cat("*")
+  }
+  cat("\n")
+}
+```
+
+```{r}
+
+```
+
+
+```{r}
+#4.
+a.
+shoe <- read.csv("shoe data.csv")
+shoes <- shoe[c(1:6),]
+shoes
+
+
+```
+
+
+
+
+
+
+
+
+
