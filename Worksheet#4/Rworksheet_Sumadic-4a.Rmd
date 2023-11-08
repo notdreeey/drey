@@ -61,7 +61,7 @@ print(new_order_data)
 
 ```{r}
 5.
-df <- read.table(file='C:/Users/HUAWEI/OneDrive/Documents/Worksheet#4/import_march.csv', header=TRUE, sep=',')
+df <- read.table(file='/cloud/project/Worksheet#4/import_march.csv', header=TRUE, sep=',')
 df
 ```
 
