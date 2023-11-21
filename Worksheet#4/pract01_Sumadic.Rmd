@@ -1,0 +1,109 @@
+---
+title: "Practical Exam in CS 101"
+author: "Andrey Sumadic BSIT 2B"
+date: "2023-11-14"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+#1.
+mt_cars <- mtcars
+mt_cars
+```
+
+```{r}
+#2. 
+num_columns <- ncol(mtcars)
+num_observations <- nrow(mtcars)
+cat("Number of Columns: ", num_columns, "\n")
+cat("Number of Observations: ", num_observations, "\n")
+```
+
+```{r}
+#3
+summary(mt_cars)
+str(mt_cars)
+```
+
+```{r}
+#4.
+
+
+
+```
+
+```{r}
+#5.
+mpg_max <- which.max(mt_cars$mpg)
+hp_max <- which.max(mt_cars$hp) 
+
+rownames(mt_cars)[mpg_max]
+rownames(mt_cars)[hp_max]
+
+```
+
+```{r}
+#6.
+eight_cyl <- mt_cars[mt_cars$cyl == 8, ] 
+
+write.csv(eight_cyl, "newCar.csv")
+
+head(eight_cyl, 2)
+
+```
+
+```{r}
+# 7.
+six_cyl <- mt_cars[mt_cars$cyl == 6, ]
+
+mean(six_cyl$mpg)
+
+```
+
+```{r}
+#8. 
+plot(mt_cars$hp, mt_cars$mpg, 
+     xlab = "Horsepower", 
+     ylab = "Miles per Gallon",
+     main = "Relationship between MPG and Horsepower")
+
+```
+
+
+```{r}
+#9.
+cylinders <- c(4,4,6,6,8,8) 
+horsepower <- c(100,110,150,160,200,225)
+
+boxplot(horsepower ~ cylinders,
+        xlab = "Number of Cylinders",
+        ylab = "Horsepower")
+
+```
+
+```{r}
+#10
+cyl_counts <- table(mt_cars$cyl) 
+
+pie(cyl_counts, 
+    labels = names(cyl_counts),
+    main = "Portion of car models with different Cylinder Numbers")
+
+```
+
+```{r}
+
+cyl_counts <- table(mt_cars$cyl)
+
+barplot(cyl_counts, 
+        main = "Number of Cars by Cylinders")
+
+cyl_counts[names(cyl_counts) == "6"]
+
+cyl_counts[names(cyl_counts) == "4"]
+
+```

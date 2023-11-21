@@ -36,19 +36,82 @@ for(i in 1:5) {
 ```
 
 ```{r}
+#3.
+print("Enter a positive integer to start the Fibonacci sequence: ")
+start <- as.integer(readline(prompt = ""))
+
+#repeat {
+#  print(start)
+#  if(start > 500) break
+#  next <- start + tail(fib, n=1)
+#  start <- next
+#}
 
 ```
 
 
 ```{r}
 #4.
-a.
+#a.
 shoe <- read.csv("shoe data.csv")
 shoes <- shoe[c(1:6),]
 shoes
 
 
 ```
+
+```{r}
+#5.
+expenses <- c(60, 10, 5, 25)
+labels <- c("Food", "Electricity", "Savings", "Miscellaneous")
+
+pie(expenses, labels = labels, col = c("green","blue","yellow","red"), 
+    main = "Monthly Expenses of Dela Cruz Family")
+
+```
+
+```{r}
+#6.
+#a.
+data(iris)
+str(iris)
+```
+
+```{r}
+#b.
+
+```
+
+```{r}
+#c.
+species <- table(iris$Species)
+pie(species, labels = names(species), col = c("blue","orange","green"), main = "Species Distribution in Iris Data")
+```
+
+```{r}
+#d.
+setosa <- iris[iris$Species=="setosa",]
+versicolor <- iris[iris$Species=="versicolor",]  
+virginica <- iris[iris$Species=="virginica",]
+
+tail(setosa, n=6)
+tail(versicolor, n=6)
+tail(virginica, n=6)
+```
+
+```{r}
+#e.
+
+```
+
+```{r}
+#f.
+
+```
+
+
+
+
 
 
 
