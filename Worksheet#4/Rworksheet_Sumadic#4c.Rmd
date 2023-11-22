@@ -1,0 +1,39 @@
+---
+title: "Rworksheet 4c"
+author: "Andrey Sumadic BSIT 2B"
+date: "2023-11-22"
+output: pdf_document
+---
+
+
+```{r}
+#1.
+#a.
+mpg <- read.csv("mpg.csv")
+
+#b.
+#The categorical varibales found in the mpg data set aremanufacturer, model, year, trans, fl, and class
+
+#c.
+#The continuous variable found in the mpg data set are displ, cty, and hwy
+```
+
+```{r}
+#2.
+library(ggplot2)
+mpg<-read.csv("mpg.csv")
+
+model_count <- table(mpg$manufacturer, mpg$model)
+max_models <- max(unlist(model_count))
+max_manufacturer <- names(model_count)[unlist(model_count) == max_models]
+variation_count <- table(mpg$model, mpg$cyl)
+
+max_variations <- max(unlist(variation_count))
+max_model <- names(variation_count)[unlist(variation_count) == max_variations]
+
+cat("The manufacturer with the most models is:", max_manufacturer)
+cat("The model with the most variations is:", max_model)
+
+#a. 
+
+```
