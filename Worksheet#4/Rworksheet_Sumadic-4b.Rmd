@@ -2,7 +2,10 @@
 title: "RWorksheet 4b"
 author: "Andrey Sumadic"
 date: "2023-11-08"
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -37,15 +40,22 @@ for(i in 1:5) {
 
 ```{r}
 #3.
-print("Enter a positive integer to start the Fibonacci sequence: ")
-start <- as.integer(readline(prompt = ""))
+n <- as.integer(readline(prompt="Enter the number of terms: "))
 
-#repeat {
-#  print(start)
-#  if(start > 500) break
-#  next <- start + tail(fib, n=1)
-#  start <- next
-#}
+a <- 0
+b <- 1
+
+print(b)
+
+repeat {
+  c <- a + b
+  if (c > 500) {
+    break
+  }
+  print(c)
+  a <- b
+  b <- c
+}
 
 ```
 
@@ -57,7 +67,31 @@ shoe <- read.csv("shoe data.csv")
 shoes <- shoe[c(1:6),]
 shoes
 
+#b.
+MaleSub<- subset(shoes, Gender == "Male")
+FemSub<- subset(shoes, Gender =="Female")
 
+print("Male Subset:")
+print(MaleSub)
+
+print("Female Subset:")
+print(FemSub)
+
+nrow(MaleSub)
+nrow(FemSub)
+
+#c
+GraphMF<- table(shoes$Gender)
+barplot(GraphMF,
+        main = "Number of Males and Females",
+        xlab = "Gender",
+        ylab = "Count",
+        col = c("red", "blue"),
+        legend.text = c("Male", "Female"),
+        beside = TRUE
+)
+
+legend("topright", legend = c("Male", "Female"), fill = c("red", "blue"))
 ```
 
 ```{r}
@@ -79,6 +113,10 @@ str(iris)
 
 ```{r}
 #b.
+mean_iris <- c(mean(iris$Sepal.Length), 
+               mean(iris$Sepal.Width),
+               mean(iris$Petal.Length), 
+               mean(iris$Petal.Width))
 
 ```
 
@@ -101,11 +139,32 @@ tail(virginica, n=6)
 
 ```{r}
 #e.
+data(iris)
+
+iris$Species <- as.factor(iris$Species)
+
+plot(iris$Sepal.Length, iris$Sepal.Width,
+     pch = as.integer(iris$Species),
+     col = iris$Species,
+     main = "Iris Dataset",
+     sub = "Sepal width and length",
+     xlab = "Sepal Length",
+     ylab = "Sepal Width")
 
 ```
 
 ```{r}
 #f.
+#The scatterplot shows similarities between the sepal width and length. It ranges from 5.5 to 7.0. 
+```
+
+```{r}
+#7.
+library(readxl)
+alexa_file <- read_excel("alexa_file.xlsx")
+View(alexa_file)
+
+#a.
 
 ```
 
