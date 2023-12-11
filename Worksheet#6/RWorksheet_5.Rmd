@@ -1,0 +1,160 @@
+---
+title: "Worksheet 6"
+author: "Andrey Sumadic BSIT 2B"
+date: "2023-12-09"
+output: pdf_document
+---
+
+
+```{r}
+#1. 
+fertilizer_levels <- c(10,10,10, 20,20,50,10,20,10,50,20,50,20,10) 
+df <- data.frame(fertilizer_levels)
+library(Hmisc)
+describe(df)   
+summary(df)
+```
+
+
+
+```{r}
+#2.
+df$fertilizer_levels <- factor(df$fertilizer_levels, ordered = TRUE,   
+                               levels = c(10, 20, 50))
+
+df$fertilizer_levels
+```
+
+
+
+```{r}
+# 3.
+exercise <- c("l", "n", "n", "i", "l", "l", "n", "n", "i", "l") 
+exercise_levels <- factor(exercise, 
+                          levels = c("n", "l", "i"),
+                          ordered = TRUE)
+str(exercise_levels)
+```
+
+
+
+```{r}
+# 4.
+state <- c("tas", "sa", "qld", "nsw", "nsw", "nt", "wa", "wa", "qld", 
+           "vic", "nsw", "vic", "qld", "qld", "sa", "tas", "sa", "nt",
+           "wa", "vic", "qld", "nsw", "nsw", "wa", "sa", "act", "nsw", 
+           "vic", "vic", "act")
+state_factor <- factor(state)
+str(state_factor)
+#State_factor is now a factor variable with 7 levels: act, nsw, nt, qld, sa, tas, vic
+#Applying the factor() function organized the state codes 
+#into a factor variable with known levels for further analysis.
+```
+
+
+
+```{r}
+# 5. 
+state_factor <- factor(state) 
+incomes <- c(60, 49, 40, 61, 64, 60, 59, 54, 
+             62, 69, 70, 42, 56, 61, 61, 61, 58, 51, 48,
+             65, 49, 49, 41, 48, 52, 46, 59, 46, 58, 43)
+incmeans <- tapply(incomes, state_factor, mean)
+incmeans
+
+#We can interpret that on average, tax accountants from Tasmania (TAS) earned 
+#the highest mean income of $60,000, 
+#while those from the Australian Capital Territory (ACT) 
+#earned the lowest mean of $45,500.
+```
+
+
+
+```{r}
+#6. 
+stdError <- function(x) sqrt(var(x)/length(x))
+incster <- tapply(incomes, state_factor, stdError)
+incster
+
+#The standard error for Tasmania is 0, since there was no variation in the single observation.
+#The highest standard error is for the Northern Territory (NT), at $7.0711, 
+#indicating higher variation around the mean for that state.
+#The lowest non-zero standard error is for South Australia (SA), at $5.6568, 
+#showing least variation around the mean income for that state grouping.
+```
+
+
+
+```{r}
+#7. 
+data("Titanic")
+titanic_df <- as.data.frame(Titanic)
+survived_df <- subset(titanic_df, Survived == "Yes")
+not_survived_df <- subset(titanic_df, Survived == "No")
+head(survived_df)
+head(not_survived_df)
+```
+
+
+
+
+```{r}
+breast_cancer_data <- read.csv("/cloud/project/Worksheet#6/breastcancer_wisconsin.csv")
+#8.
+# a.) 
+length(breast_cancer_data)
+head(breast_cancer_data)
+summary(breast_cancer_data)
+str(breast_cancer_data)
+```
+
+```{r}
+#d.) 
+#d.1
+install.packages("psych")
+library(psych)
+
+se_mean_clump_thickness <- sd(breast_cancer_data$clump_thickness) / sqrt(length(breast_cancer_data$clump_thickness))
+```
+
+
+```{r}
+#d.2
+mean_marginal_adhesion <- mean(breast_cancer_data$marginal_adhesion)
+sd_marginal_adhesion <- sd(breast_cancer_data$marginal_adhesion)
+cv_marginal_adhesion <- (sd_marginal_adhesion / mean_marginal_adhesion) * 100
+```
+
+
+```{r}
+#d.3
+install.packages("naniar")
+library(naniar)
+
+null_values_bare_nucleoli <- sum(is.na(breast_cancer_data$bare_nucleoli))
+```
+
+
+```{r}
+#d.4
+mean_bland_chromatin <- mean(breast_cancer_data$bland_chromatin)
+sd_bland_chromatin <- sd(breast_cancer_data$bland_chromatin)
+```
+
+```{r}
+#d.5
+ci_mean_uniformity_cell_shape <- t.test(breast_cancer_data$shape_uniformity)$conf.int
+
+```
+
+
+
+```{r}
+#9.
+install.packages("AppliedPredictiveModeling")
+
+library(AppliedPredictiveModeling)
+data(abalone)
+head(abalone)
+summary(abalone)
+```
